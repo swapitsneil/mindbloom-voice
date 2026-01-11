@@ -90,6 +90,12 @@ No judgment.
 
 ---
 
+## Deployment
+
+Vercel deployment - https://mindbloom-voice.vercel.app/
+
+---
+
 ## 🛠️ Tech Stack
 
 ### Frontend
