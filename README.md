@@ -31,7 +31,7 @@ they need **someone to listen, calm them down, and guide them gently**.
 
 MindBloom Voice Companion provides:
 
-- 🤍 A calm AI chat companion available 24/7  
+- 🤍 A calm AI chat companion available 24/7 with voice input & voice out
 - 🧘 Short, grounding coping steps (breathing, reflection, journaling)  
 - 📓 A private journaling space tied to calendar dates  
 - 😊 Daily mood tracking  
@@ -51,6 +51,8 @@ No judgment.
 - Progressive conversation (no repetitive replies)
 - Session-based memory (resets on refresh)
 - Powered by **free OpenRouter AI model**
+- Optional **voice input & voice output** for hands-free support
+
 
 ### 📓 Smart Journaling
 - Write entries for **any past date**
