@@ -80,7 +80,9 @@ No judgment.
 
 ![Image](https://github.com/user-attachments/assets/2f999c9b-21ce-4fd5-bc78-0bf7d4a9b6af)
 
-<img width="2824" height="1398" alt="Image" src="https://github.com/user-attachments/assets/85a9bc4c-98d3-4c75-ae55-b62d8a2025ba" />
+<img width="2756" height="1510" alt="Image" src="https://github.com/user-attachments/assets/a19a53b3-2077-430b-b387-ecb5ce30f343" />
+
+<img width="2848" height="1516" alt="Image" src="https://github.com/user-attachments/assets/2381037a-3c6d-4c55-9b97-660f3118a273" />
 
 <img width="2818" height="1388" alt="Image" src="https://github.com/user-attachments/assets/641097be-9a15-4e4a-a034-18e32c7cc344" />
 
