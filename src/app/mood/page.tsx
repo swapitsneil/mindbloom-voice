@@ -3,10 +3,22 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
-import { ArrowLeft, Heart, Smile, Frown, Meh } from "lucide-react";
+import {
+  ArrowLeft,
+  Heart,
+  Smile,
+  Frown,
+  Meh,
+  Check,
+} from "lucide-react";
 import Link from "next/link";
 import { moodStore } from "@/lib/storage/mood-store";
 
@@ -15,7 +27,7 @@ const MOOD_OPTIONS = [
   { value: "good", label: "Good", icon: Smile, color: "text-emerald-600" },
   { value: "okay", label: "Okay", icon: Meh, color: "text-yellow-600" },
   { value: "down", label: "Down", icon: Frown, color: "text-orange-600" },
-  { value: "struggling", label: "Struggling", icon: Frown, color: "text-red-600" }
+  { value: "struggling", label: "Struggling", icon: Frown, color: "text-red-600" },
 ];
 
 export default function MoodCheckIn() {
@@ -23,7 +35,6 @@ export default function MoodCheckIn() {
   const [note, setNote] = useState("");
   const [isSaved, setIsSaved] = useState(false);
 
-  // Initialize state with data from localStorage
   const [todayMood, setTodayMood] = useState<string | null>(() => {
     if (typeof window !== "undefined") {
       return moodStore.getTodayMood();
@@ -33,44 +44,46 @@ export default function MoodCheckIn() {
 
   const [selectedMood, setSelectedMood] = useState<string>(() => {
     if (typeof window !== "undefined") {
-      const existing = moodStore.getTodayMood();
-      return existing || "";
+      return moodStore.getTodayMood() || "";
     }
     return "";
   });
 
   const handleSave = () => {
     if (!selectedMood) return;
-    
+
     moodStore.saveMood(selectedMood, note.trim() || undefined);
     setIsSaved(true);
-    
-    // Redirect to home after a moment
+
     setTimeout(() => {
       router.push("/");
-    }, 1500);
+    }, 1200);
   };
+
+  /* ------------------ STATES ------------------ */
 
   if (isSaved) {
     return (
       <div className="space-y-4">
-        <Link href="/" className="text-purple-600 hover:text-purple-800 inline-flex items-center gap-2">
+        <Link href="/" className="inline-flex items-center gap-2 text-purple-600">
           <ArrowLeft className="w-4 h-4" />
           Back home
         </Link>
-        
-        <Card className="border-2 border-green-100">
+
+        <Card className="border-green-200">
           <CardHeader>
-            <CardTitle className="text-green-900 text-2xl">✓ Mood Check-in Saved</CardTitle>
+            <CardTitle className="text-green-900 text-2xl">
+              ✓ Mood Check-in Saved
+            </CardTitle>
             <CardDescription className="text-green-700">
               Thank you for checking in with yourself today.
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <p className="text-green-800 mb-4">
-              Your emotional wellness matters. Remember, it is okay to have different feelings each day.
-            </p>
-            <Button onClick={() => router.push("/")} className="bg-green-600 hover:bg-green-700">
+            <Button
+              onClick={() => router.push("/")}
+              className="bg-green-600 hover:bg-green-700"
+            >
               Return Home
             </Button>
           </CardContent>
@@ -82,91 +95,97 @@ export default function MoodCheckIn() {
   if (todayMood) {
     return (
       <div className="space-y-4">
-        <Link href="/" className="text-purple-600 hover:text-purple-800 inline-flex items-center gap-2">
+        <Link href="/" className="inline-flex items-center gap-2 text-purple-600">
           <ArrowLeft className="w-4 h-4" />
           Back home
         </Link>
-        
-        <Card className="border-2 border-purple-100">
+
+        <Card className="border-purple-200">
           <CardHeader>
-            <CardTitle className="text-purple-900">Already Checked In Today</CardTitle>
-            <CardDescription className="text-purple-700">
-              You rated today as: <strong>{todayMood}</strong>
+            <CardTitle className="text-purple-900">
+              Already Checked In Today
+            </CardTitle>
+            <CardDescription>
+              You rated today as <strong>{todayMood}</strong>
             </CardDescription>
           </CardHeader>
-          <CardContent>
-            <p className="text-purple-800 mb-4">
-              Would you like to update your mood for today?
-            </p>
-            <div className="flex gap-2">
-              <Button onClick={() => setTodayMood(null)} className="bg-purple-600 hover:bg-purple-700">
-                Update Mood
-              </Button>
-              <Link href="/">
-                <Button variant="outline">Return Home</Button>
-              </Link>
-            </div>
+          <CardContent className="flex gap-2">
+            <Button
+              onClick={() => setTodayMood(null)}
+              className="bg-purple-600 hover:bg-purple-700"
+            >
+              Update Mood
+            </Button>
+            <Link href="/">
+              <Button variant="outline">Return Home</Button>
+            </Link>
           </CardContent>
         </Card>
       </div>
     );
   }
 
+  /* ------------------ MAIN UI ------------------ */
+
   return (
     <div className="space-y-6">
       {/* Header */}
       <div className="flex items-center gap-4">
-        <Link href="/" className="text-purple-600 hover:text-purple-800">
+        <Link href="/" className="text-purple-600">
           <ArrowLeft className="w-6 h-6" />
         </Link>
-        <h2 className="text-2xl font-bold text-purple-900">Daily Mood Check-in</h2>
+        <h2 className="text-2xl font-bold text-purple-900">
+          Daily Mood Check-in
+        </h2>
       </div>
 
-      {/* Instructions */}
-      <div className="bg-white/60 backdrop-blur border border-purple-100 rounded-lg p-4">
+      {/* Instruction */}
+      <div className="bg-white/60 border border-purple-100 rounded-lg p-4">
         <p className="text-purple-800 text-sm">
-          Take a moment to check in with yourself. There is no right or wrong answer - just honest reflection.
+          Take a moment to check in with yourself. There is no right or wrong
+          answer — just honest reflection.
         </p>
       </div>
 
       {/* Mood Selection */}
-      <Card className="border-2 border-purple-100">
+      <Card className="border-purple-100">
         <CardHeader>
-          <CardTitle className="text-purple-900">How are you feeling today?</CardTitle>
-            <CardDescription className="text-purple-700">
-              Choose the mood that best describes how you are doing right now
-            </CardDescription>
+          <CardTitle className="text-purple-900">
+            How are you feeling today?
+          </CardTitle>
+          <CardDescription>
+            Choose the option that best matches your current state
+          </CardDescription>
         </CardHeader>
+
         <CardContent className="space-y-4">
-          <Select value={selectedMood} onValueChange={setSelectedMood}>
-            <SelectTrigger className="w-full">
-              <SelectValue placeholder="Select your mood...">
-                {selectedMood && (
-                  <span className="flex items-center gap-2">
-                    {(() => {
-                      const option = MOOD_OPTIONS.find(o => o.value === selectedMood);
-                      const Icon = option?.icon || Heart;
-                      return <Icon className="w-4 h-4" />;
-                    })()}
-                    {MOOD_OPTIONS.find(o => o.value === selectedMood)?.label}
-                  </span>
-                )}
-              </SelectValue>
-            </SelectTrigger>
-            <SelectContent>
-              {MOOD_OPTIONS.map(option => {
-                const Icon = option.icon;
-                return (
-                  <SelectItem key={option.value} value={option.value}>
-                    <span className="flex items-center gap-2">
-                      <Icon className={`w-4 h-4 ${option.color}`} />
+          <div className="space-y-2">
+            {MOOD_OPTIONS.map((option) => {
+              const Icon = option.icon;
+              const isActive = selectedMood === option.value;
+
+              return (
+                <button
+                  key={option.value}
+                  onClick={() => setSelectedMood(option.value)}
+                  className={`w-full flex items-center justify-between p-4 rounded-lg border transition
+                    ${
+                      isActive
+                        ? "border-purple-400 bg-purple-50"
+                        : "border-purple-100 hover:bg-purple-50"
+                    }`}
+                >
+                  <div className="flex items-center gap-3">
+                    <Icon className={`w-5 h-5 ${option.color}`} />
+                    <span className="font-medium text-purple-900">
                       {option.label}
                     </span>
-                  </SelectItem>
-                );
-              })}
-            </SelectContent>
-          </Select>
+                  </div>
+                  {isActive && <Check className="w-5 h-5 text-purple-600" />}
+                </button>
+              );
+            })}
+          </div>
 
           {/* Optional Note */}
           <div className="space-y-2">
@@ -177,29 +196,30 @@ export default function MoodCheckIn() {
               placeholder="What is on your mind today? (optional)"
               value={note}
               onChange={(e) => setNote(e.target.value)}
-              className="border-2 border-purple-200 focus:border-purple-400 min-h-[100px]"
+              className="min-h-[100px]"
             />
           </div>
 
-          {/* Save Button */}
           <Button
             onClick={handleSave}
             disabled={!selectedMood}
-            className="w-full bg-purple-600 hover:bg-purple-700 disabled:opacity-50"
+            className="w-full bg-purple-600 hover:bg-purple-700"
           >
             Save Check-in
           </Button>
         </CardContent>
       </Card>
 
-      {/* Quick Tips */}
+      {/* Tips */}
       <div className="bg-pink-50 border border-pink-200 rounded-lg p-4">
-        <h3 className="text-pink-900 font-medium mb-2">Why check in daily?</h3>
+        <h3 className="text-pink-900 font-medium mb-2">
+          Why check in daily?
+        </h3>
         <ul className="text-pink-800 text-sm space-y-1">
           <li>• Builds self-awareness</li>
           <li>• Tracks emotional patterns</li>
-          <li>• Helps identify triggers</li>
-          <li>• Celebrates your progress</li>
+          <li>• Helps detect burnout early</li>
+          <li>• Encourages consistency</li>
         </ul>
       </div>
     </div>

@@ -198,7 +198,6 @@ export default function Home() {
           <strong>Important:</strong> MindBloom Voice Companion is not therapy.
           If you are in crisis or danger, please seek professional help.
           <br />
-          <strong>THIS IS IN DASHBOARD</strong>
         </p>
       </div>
     </div>
