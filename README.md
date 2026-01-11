@@ -146,23 +146,21 @@ No judgment.
 
 ```
 src/
-├── app/
-│   ├── api/
-│   │   └── chat/          # AI chat API route
-│   ├── chat/              # Chat interface
-│   ├── journal/           # Journal entries
-│   ├── mood/              # Mood tracking
-│   └── page.tsx           # Home page
-├── components/
-│   └── shared/            # Reusable UI components
+├── app/                  ✅ App Router used correctly
+│   ├── api/chat/          ✅ Server-only AI logic 
+│   ├── chat/              ✅ Chat UI (voice + text)
+│   ├── journal/           ✅ Journaling feature isolated
+│   ├── mood/              ✅ Mood tracking isolated
+│   └── page.tsx           ✅ Landing page
+├── components/shared/     ✅ Reusable layout components
 ├── lib/
-│   ├── hooks/
-│   │   └── useChat.ts     # Custom chat hook
-│   └── storage/           # LocalStorage managers
+│   ├── hooks/useChat.ts   ✅ Single source of chat truth
+│   └── storage/           ✅ LocalStorage abstraction (clean)
 ├── agents/
-│   └── ai-agents.ts       # AI safety & response agents
+│   └── ai-agents.ts       ✅ AI safety & behaviour logic
 └── types/
-    └── index.ts           # TypeScript definitions
+    └── index.ts           ✅ Centralized types
+
 ```
 
 ## 🔒 Privacy & Security
