@@ -1,4 +1,4 @@
-# 🎙️ MindBloom Voice (New Version)
+# 🎙️ MindBloom Voice (New Voice Version)
 
 MindBloom Voice adds **hands-free emotional support** using speech.
 
