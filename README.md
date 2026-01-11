@@ -53,7 +53,6 @@ No judgment.
 - Powered by **free OpenRouter AI model**
 - Optional **voice input & voice output** for hands-free support
 
-
 ### 📓 Smart Journaling
 - Write entries for **any past date**
 - Calendar highlights saved days
@@ -69,6 +68,11 @@ No judgment.
 - Not therapy, not medical advice
 - Encourages real-world support when needed
 - Calm, student-friendly tone throughout
+
+### Voice & Accessibility
+- Browser SpeechRecognition API
+- Browser SpeechSynthesis API
+- No third-party paid voice services
 
 ---
 
