@@ -1,9 +1,14 @@
-# 🌱 MindBloom Voice Companion - Your Calm AI Companion for Students
+# 🎙️ MindBloom Voice (New Version)
 
-MindBloom Voice Companion is a gentle, student-focused AI companion designed to help users feel heard, grounded, and supported during stressful moments exams, job loss, burnout, or loneliness.
+MindBloom Voice adds **hands-free emotional support** using speech.
 
-It is **not therapy**.  
-It is a **safe first step** toward mental clarity and self-reflection.
+- 🎤 Speak instead of typing using browser speech recognition  
+- 🔊 AI responses are read aloud using text-to-speech  
+- 🌿 Designed for moments of overwhelm, fatigue, or anxiety  
+- 🧠 Safety-first, non-therapy philosophy  
+- 🆓 Uses only **free browser APIs** (no paid voice services)
+
+This makes MindBloom accessible even when users are too stressed to type.
 
 ---
 
