@@ -1,78 +1,90 @@
-# 🎙️ MindBloom Voice (New Voice Version)
+# 🎙️ MindBloom Voice — AI Burnout Detection & Mental Insights
 
-MindBloom Voice adds **hands-free emotional support** using speech.
+MindBloom Voice is an **AI-powered mental insight system** that helps students and young professionals **detect burnout early**, understand emotional trends, and receive **actionable guidance** — all while remaining **private, lightweight, and non-clinical**.
 
-- 🎤 Speak instead of typing using browser speech recognition  
-- 🔊 AI responses are read aloud using text-to-speech  
-- 🌿 Designed for moments of overwhelm, fatigue, or anxiety  
-- 🧠 Safety-first, non-therapy philosophy  
-- 🆓 Uses only **free browser APIs** (no paid voice services)
-
-This makes MindBloom accessible even when users are too stressed to type.
+Unlike typical mental health apps, MindBloom does not focus on motivation or therapy.  
+It focuses on **early risk detection and prevention**.
 
 ---
 
-## 🧠 Problem
+## 🧠 The Problem
 
 Students today face:
 
-- Academic pressure and deadlines  
-- Career uncertainty and job loss  
+- Academic pressure and constant deadlines  
+- Career uncertainty and job instability  
 - Financial stress  
-- Emotional burnout  
-- Limited access to counsellors (cost, wait time, hesitation)
+- Emotional burnout and mental fatigue  
+- Limited access to counselling due to cost, stigma, or wait time  
 
-Most students don’t need therapy immediately —  
-they need **someone to listen, calm them down, and guide them gently**.
+Most people don’t need therapy immediately.  
+They need **early signals**, **clarity**, and **small corrective actions** *before burnout escalates*.
+
+However:
+- Burnout is rarely detected early
+- Emotional decline often goes unnoticed
+- Existing apps focus on journaling or motivation, not **risk detection**
 
 ---
 
-## 🌼 Solution - MindBloom Voice Companion
+## 🌱 The Solution — MindBloom Voice
 
-MindBloom Voice Companion provides:
+MindBloom Voice is a **mental risk detection companion** that:
 
-- 🤍 A calm AI chat companion available 24/7 with voice input & voice out
-- 🧘 Short, grounding coping steps (breathing, reflection, journaling)  
-- 📓 A private journaling space tied to calendar dates  
-- 😊 Daily mood tracking  
-- 🔒 100% private — everything stays on the user’s device  
-- 🚨 Gentle safety escalation when distress is detected  
+- Analyse mood patterns over time  
+- Detects **burnout risk** using explainable logic  
+- Tracks **emotional trends week-over-week**  
+- Provides **AI-generated preventive recommendations**  
+- Supports **hands-free voice interaction** for moments of fatigue  
 
-No pressure.  
-No diagnosis.  
-No judgment.
+No diagnosis  
+No medical claims  
+No pressure  
+
+Just **early insight and guidance**
 
 ---
 
 ## ✨ Key Features
 
-### 💬 AI Chat Companion
-- Supportive, human-like responses
-- Progressive conversation (no repetitive replies)
-- Session-based memory (resets on refresh)
-- Powered by **free OpenRouter AI model**
-- Optional **voice input & voice output** for hands-free support
+### 🧠 Burnout Risk Detection (Core Feature)
+- Calculates burnout risk using recent mood patterns
+- Detects declining emotional trends
+- Shows **Low / Medium / High** risk clearly on the dashboard
+- Transparent and explainable logic (not a black box)
+
+### 📊 Emotional Trend Analysis
+- Compares last 7 days vs previous 7 days
+- Identifies improving, stable, or declining emotional states
+- Helps users understand patterns instead of guessing
+
+### 🤖 AI Recommendation Engine
+- Generates **short, practical guidance** based on detected risk
+- Focuses on prevention and productivity-safe advice
+- Uses AI meaningfully — not just for chat
+
+### 🎤 Voice-First Accessibility
+- Speak instead of typing using browser SpeechRecognition
+- AI replies can be read aloud using SpeechSynthesis
+- Designed for moments of stress, fatigue, or overwhelm
+- No paid voice services — browser APIs only
 
 ### 📓 Smart Journaling
-- Write entries for **any past date**
-- Calendar highlights saved days
-- Edit and revisit old thoughts easily
-- Perfect for self-reflection and emotional clarity
+- Journal entries linked to calendar dates
+- Edit and revisit past entries
+- Journals support emotional reflection (not analysis)
 
 ### 😊 Mood Tracking
-- Track how you feel daily
-- Mood is linked with journal entries
-- Helps recognize emotional patterns over time
+- Simple daily mood check-ins
+- Mood data feeds directly into burnout detection logic
+- Helps convert feelings into measurable insight
 
-### 🛡️ Safety-First Design
-- Not therapy, not medical advice
-- Encourages real-world support when needed
-- Calm, student-friendly tone throughout
-
-### Voice & Accessibility
-- Browser SpeechRecognition API
-- Browser SpeechSynthesis API
-- No third-party paid voice services
+### 🔒 Privacy-First by Design
+- 100% local storage
+- No database
+- No authentication
+- No tracking
+- No data leaves the user’s device (except AI requests)
 
 ---
 
@@ -92,9 +104,10 @@ No judgment.
 
 ---
 
-## Deployment
+## 🚀 Live Demo
 
-Vercel deployment - https://mindbloom-voice.vercel.app/
+🔗 **Vercel Deployment**  
+https://mindbloom-voice.vercel.app/
 
 ---
 
@@ -108,9 +121,9 @@ Vercel deployment - https://mindbloom-voice.vercel.app/
 
 ### AI & Backend
 - OpenRouter API
-- model: xiaomi/mimo-v2-flash:free
+- Model: `xiaomi/mimo-v2-flash:free`
 - Server-side Node.js runtime
-- In-memory session handling (no database)
+- Safety-filtered AI responses
 
 ### Storage
 - Browser LocalStorage only
@@ -119,86 +132,92 @@ Vercel deployment - https://mindbloom-voice.vercel.app/
 
 ---
 
-## 🚀 Getting Started
-
-### Prerequisites
-
-- Node.js 18+ 
-- npm, yarn, or pnpm
-- OpenRouter API key or any API key
-
-### Installation
-
-1. **Clone and install dependencies**
-   ```bash
-   npm install
-   ```
-
-2. **Set up environment variables**
-   ```bash
-   cp .env.local.example .env.local
-   ```
-   Then add your API key (gemini, openai or any) to `.env.local`
-
-3. **Run development server**
-   ```bash
-   npm run dev
-   ```
-
-4. **Open the app**
-   ```
-   http://localhost:3000
-   ```
-
-## 📁 Project Structure
+## 🧩 Architecture Overview
 
 ```
 src/
-├── app/                  ✅ App Router used correctly
-│   ├── api/chat/          ✅ Server-only AI logic 
-│   ├── chat/              ✅ Chat UI (voice + text)
-│   ├── journal/           ✅ Journaling feature isolated
-│   ├── mood/              ✅ Mood tracking isolated
-│   └── page.tsx           ✅ Landing page
-├── components/shared/     ✅ Reusable layout components
+├── app/
+│ ├── api/chat/ # Server-side AI logic
+│ ├── chat/ # Voice + text chat UI
+│ ├── journal/ # Journaling feature
+│ ├── mood/ # Mood tracking
+│ ├── insights/ # Burnout & trend explanations
+│ └── page.tsx # Dashboard (source of truth)
+├── components/shared/ # Reusable layout components
 ├── lib/
-│   ├── hooks/useChat.ts   ✅ Single source of chat truth
-│   └── storage/           ✅ LocalStorage abstraction (clean)
+│ ├── hooks/useChat.ts # Chat logic abstraction
+│ └── storage/ # LocalStorage abstraction
 ├── agents/
-│   └── ai-agents.ts       ✅ AI safety & behaviour logic
+│ └── ai-agents.ts # AI behavior & safety rules
 └── types/
-    └── index.ts           ✅ Centralized types
-
+└── index.ts # Centralized types
 ```
 
-## 🔒 Privacy & Security
 
-- **Local Storage Only**: All chat history, mood logs, and journal entries are stored locally in your browser
-- **Session-Based**: Backend memory clears on server restart
-- **No Medical Advice**: This is emotional support, not therapy
-- **Emergency Resources**: Clear disclaimers and crisis helpline information
+---
+
+## 🔐 Privacy & Safety
+
+- All personal data stays on the user’s device
+- AI is used for insight, not diagnosis
+- Clear safety disclaimers
+- Encourages professional help when needed
+- No medical or therapeutic claims
+
+---
 
 ## ⚠️ Important Disclaimer
 
-**MindBloom Voice Companion is not therapy or a replacement for professional help.** If you are in crisis or danger, please reach out to emergency services or a mental health professional immediately.
-
-## 🎯 Project Goals
-
-This project was built for a hackathon with the following objectives:
-
-- ✅ Create a safe, judgment-free space for emotional expression
-- ✅ Implement AI-powered supportive conversations
-- ✅ Provide mood tracking and journaling capabilities
-- ✅ Ensure complete user privacy through local storage
-- ✅ Build with modern, accessible UI/UX
-
-
-## 🤝 Contributing
-
-This is a hackathon project, but feedback and suggestions are welcome!
+**MindBloom Voice is not therapy or medical advice.**  
+If you are in crisis or immediate danger, please contact local emergency services or a mental health professional.
 
 ---
-## 🙌 Author
-Built with care by Swapnil Nicolson Dadel for students who just need a moment of peace 🌱
 
-**Built with love and care for student mental health** 💜
+## 🎯 Hackathon Objectives
+
+This project was built to:
+
+- Detect burnout **before it escalates**
+- Use AI for **real-world problem solving**, not gimmicks
+- Stay beginner-friendly while solving a serious issue
+- Demonstrate clean architecture and explainable logic
+- Prioritize privacy and accessibility
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 18+
+- npm / yarn / pnpm
+- OpenRouter API key (or compatible AI API)
+
+### Installation
+
+```bash
+npm install
+Environment Setup
+
+Create a .env.local file:
+
+OPENROUTER_API_KEY=your_api_key_here
+
+
+⚠️ Do not commit .env.local
+
+Run Locally
+npm run dev
+
+
+Open:
+
+http://localhost:3000
+```
+
+## 🙌 Author
+
+Built by Swapnil Nicolson Dadel
+For students who don’t need therapy -
+they need clarity, calm, and early signals 🌱
+
+---
