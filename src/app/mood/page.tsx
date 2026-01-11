@@ -13,7 +13,6 @@ import {
 import { Textarea } from "@/components/ui/textarea";
 import {
   ArrowLeft,
-  Heart,
   Smile,
   Frown,
   Meh,
@@ -60,7 +59,7 @@ export default function MoodCheckIn() {
     }, 1200);
   };
 
-  /* ------------------ STATES ------------------ */
+  /* ------------------ SAVED STATE ------------------ */
 
   if (isSaved) {
     return (
@@ -91,6 +90,8 @@ export default function MoodCheckIn() {
       </div>
     );
   }
+
+  /* ------------------ ALREADY CHECKED ------------------ */
 
   if (todayMood) {
     return (
@@ -196,7 +197,7 @@ export default function MoodCheckIn() {
               placeholder="What is on your mind today? (optional)"
               value={note}
               onChange={(e) => setNote(e.target.value)}
-              className="min-h-[100px]"
+              className="min-h-25"
             />
           </div>
 

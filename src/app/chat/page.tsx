@@ -7,6 +7,10 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Send, Mic, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { useChat } from "@/lib/hooks/useChat";
+import {
+  analyzeVoiceSentiment,
+  VoiceSentiment,
+} from "@/lib/sentiment/voice-sentiment";
 
 /* ============================
    Browser Speech API Typings
@@ -45,6 +49,12 @@ export default function ChatPage() {
   const [input, setInput] = useState("");
   const [isListening, setIsListening] = useState(false);
 
+  // 🔥 Voice sentiment state
+  const [voiceInsight, setVoiceInsight] = useState<{
+    sentiment: VoiceSentiment;
+    crisis: boolean;
+  } | null>(null);
+
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
   const recognitionRef = useRef<SpeechRecognition | null>(null);
 
@@ -69,11 +79,30 @@ export default function ChatPage() {
     recognition.interimResults = false;
 
     recognition.onresult = (event) => {
-      setInput(event.results[0][0].transcript);
+      const transcript = event.results[0][0].transcript;
+      setInput(transcript);
+
+      // 🔥 Voice sentiment analysis
+      const analysis = analyzeVoiceSentiment(transcript);
+
+      setVoiceInsight({
+        sentiment: analysis.sentiment,
+        crisis: analysis.crisis,
+      });
+
+      localStorage.setItem(
+        "mindbloom_voice_sentiment",
+        JSON.stringify({
+          sentiment: analysis.sentiment,
+          score: analysis.score,
+          crisis: analysis.crisis,
+          transcript,
+          timestamp: Date.now(),
+        })
+      );
     };
 
     recognition.onend = () => setIsListening(false);
-
     recognitionRef.current = recognition;
   }, []);
 
@@ -171,6 +200,66 @@ export default function ChatPage() {
         </CardContent>
       </Card>
 
+      {/* 🔥 Voice Insight */}
+      {voiceInsight && (
+        <div className="p-4 rounded-lg border border-purple-200 bg-purple-50">
+          <p className="text-sm text-purple-800">
+            <strong>Voice Insight:</strong>{" "}
+            {voiceInsight.sentiment === "Calm" &&
+              "You sound calm and steady right now."}
+            {voiceInsight.sentiment === "Neutral" &&
+              "Your tone sounds neutral."}
+            {voiceInsight.sentiment === "Stressed" &&
+              "You sound emotionally stressed."}
+            {voiceInsight.sentiment === "Distressed" &&
+              "You sound deeply overwhelmed."}
+          </p>
+        </div>
+      )}
+
+      {/* 🚨 STEP 2: Gentle Crisis Nudge */}
+      {voiceInsight?.crisis && (
+        <div className="p-4 rounded-lg border border-red-200 bg-red-50">
+          <p className="text-sm text-red-800 font-medium">
+            You don’t have to go through this alone.
+          </p>
+
+          <p className="text-sm text-red-700 mt-1">
+            If things feel overwhelming right now, it might help to talk to
+            someone you trust or reach out to a support service.
+          </p>
+
+          <div className="mt-3 space-y-1 text-sm">
+            <p>
+              🇮🇳 <strong>India:</strong>{" "}
+              <a
+                href="tel:9820466726"
+                className="underline text-red-700"
+              >
+                AASRA Helpline — 9820466726
+              </a>
+            </p>
+
+            <p>
+              🌍 <strong>Global:</strong>{" "}
+              <a
+                href="https://findahelpline.com"
+                target="_blank"
+                rel="noreferrer"
+                className="underline text-red-700"
+              >
+                findahelpline.com
+              </a>
+            </p>
+          </div>
+
+          <p className="text-xs text-red-600 mt-2">
+            This support is optional. MindBloom is not a replacement for
+            professional help.
+          </p>
+        </div>
+      )}
+
       {/* Input */}
       <form onSubmit={handleSubmit} className="flex gap-2">
         <Button
@@ -178,9 +267,7 @@ export default function ChatPage() {
           variant="outline"
           onClick={toggleListening}
           className={`min-w-12 transition ${
-            isListening
-              ? "ring-2 ring-primary bg-white"
-              : "bg-white"
+            isListening ? "ring-2 ring-primary bg-white" : "bg-white"
           }`}
         >
           <Mic className="w-4 h-4" />
