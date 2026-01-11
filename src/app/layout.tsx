@@ -7,9 +7,9 @@ import { Footer } from "@/components/shared/footer";
 const inter = Inter({ subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
-  title: "MindBloom Voice Companion - Your Mental Health Companion",
+  title: "MindBloom Voice Companion — AI Burnout & Mental Risk Detection",
   description:
-    "A safe space to feel heard and find support. MindBloom Voice Companion listens, supports, and guides you toward wellness.",
+    "MindBloom Voice Companion uses AI to detect early burnout and emotional risk through reflection, mood, and voice-based insights.",
 };
 
 export default function RootLayout({
