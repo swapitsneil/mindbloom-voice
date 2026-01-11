@@ -20,7 +20,7 @@ Students today face:
 - Career uncertainty and job loss  
 - Financial stress  
 - Emotional burnout  
-- Limited access to counselors (cost, wait time, hesitation)
+- Limited access to counsellors (cost, wait time, hesitation)
 
 Most students don’t need therapy immediately —  
 they need **someone to listen, calm them down, and guide them gently**.
@@ -78,17 +78,15 @@ No judgment.
 
 ## 🖼️ Screenshots
 
+![Image](https://github.com/user-attachments/assets/2f999c9b-21ce-4fd5-bc78-0bf7d4a9b6af)
 
+<img width="2824" height="1398" alt="Image" src="https://github.com/user-attachments/assets/85a9bc4c-98d3-4c75-ae55-b62d8a2025ba" />
 
-<img width="2844" height="1512" alt="Image" src="https://github.com/user-attachments/assets/a5447019-f172-46d8-a39a-215131df831e" />
+<img width="2818" height="1388" alt="Image" src="https://github.com/user-attachments/assets/641097be-9a15-4e4a-a034-18e32c7cc344" />
 
-<img width="2854" height="1520" alt="Image" src="https://github.com/user-attachments/assets/fa9fd467-b74d-43dd-85d3-f0b0de2bb857" />
+<img width="2800" height="1362" alt="Image" src="https://github.com/user-attachments/assets/1be68d42-c06e-4afe-af67-9cb7da85ca14" />
 
-<img width="2850" height="1428" alt="Image" src="https://github.com/user-attachments/assets/25a35663-0140-45b0-8429-d79e2394793d" />
-
-<img width="2828" height="1478" alt="Image" src="https://github.com/user-attachments/assets/7e14a397-d81a-4e9e-98ec-1f1a047c4b73" />
-
-<img width="2798" height="1468" alt="Image" src="https://github.com/user-attachments/assets/b1329456-b477-46b6-86b5-f2927fde66cb" />
+<img width="2848" height="1390" alt="Image" src="https://github.com/user-attachments/assets/e640b5b6-1c14-4a49-948f-b81cd07ae0f6" />
 
 ---
 
