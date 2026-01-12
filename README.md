@@ -90,7 +90,7 @@ Just **early insight and guidance**
 
 ## 🖼️ Screenshots
 
-![Image](https://github.com/user-attachments/assets/2f999c9b-21ce-4fd5-bc78-0bf7d4a9b6af)
+<img width="2824" height="1514" alt="Image" src="https://github.com/user-attachments/assets/2b770f88-c6eb-434c-a672-15f2451cb8fd" />
 
 <img width="2756" height="1510" alt="Image" src="https://github.com/user-attachments/assets/a19a53b3-2077-430b-b387-ecb5ce30f343" />
 
