@@ -49,10 +49,12 @@ export default function ChatPage() {
   const [input, setInput] = useState("");
   const [isListening, setIsListening] = useState(false);
 
-  // 🔥 Voice sentiment state
+  // 🔥 UPDATED: full voice insight state
   const [voiceInsight, setVoiceInsight] = useState<{
     sentiment: VoiceSentiment;
     crisis: boolean;
+    score: number;
+    matchedPhrases: string[];
   } | null>(null);
 
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
@@ -82,12 +84,13 @@ export default function ChatPage() {
       const transcript = event.results[0][0].transcript;
       setInput(transcript);
 
-      // 🔥 Voice sentiment analysis
       const analysis = analyzeVoiceSentiment(transcript);
 
       setVoiceInsight({
         sentiment: analysis.sentiment,
         crisis: analysis.crisis,
+        score: analysis.score,
+        matchedPhrases: analysis.matchedPhrases,
       });
 
       localStorage.setItem(
@@ -96,6 +99,7 @@ export default function ChatPage() {
           sentiment: analysis.sentiment,
           score: analysis.score,
           crisis: analysis.crisis,
+          matchedPhrases: analysis.matchedPhrases,
           transcript,
           timestamp: Date.now(),
         })
@@ -200,59 +204,49 @@ export default function ChatPage() {
         </CardContent>
       </Card>
 
-      {/* 🔥 Voice Insight */}
+      {/* 🔥 VOICE INSIGHT WOW BOX */}
       {voiceInsight && (
-        <div className="p-4 rounded-lg border border-purple-200 bg-purple-50">
+        <div className="p-4 rounded-lg border border-purple-200 bg-purple-50 space-y-2">
           <p className="text-sm text-purple-800">
             <strong>Voice Insight:</strong>{" "}
-            {voiceInsight.sentiment === "Calm" &&
-              "You sound calm and steady right now."}
+            {voiceInsight.sentiment === "Calm" && "You sound calm and steady."}
             {voiceInsight.sentiment === "Neutral" &&
-              "Your tone sounds neutral."}
+              "Your tone sounds slightly low."}
             {voiceInsight.sentiment === "Stressed" &&
               "You sound emotionally stressed."}
             {voiceInsight.sentiment === "Distressed" &&
               "You sound deeply overwhelmed."}
           </p>
+
+      
+
+          {/* Emotional Intensity Meter */}
+          <div>
+            <p className="text-xs text-purple-700 mb-1">
+              Emotional intensity
+            </p>
+            <div className="h-2 w-full bg-purple-100 rounded">
+              <div
+                className="h-2 bg-purple-500 rounded transition-all"
+                style={{
+                  width: `${Math.min(100, voiceInsight.score * 12)}%`,
+                }}
+              />
+            </div>
+          </div>
         </div>
       )}
 
-      {/* 🚨 STEP 2: Gentle Crisis Nudge */}
+      {/* 🚨 Gentle Crisis Nudge */}
       {voiceInsight?.crisis && (
         <div className="p-4 rounded-lg border border-red-200 bg-red-50">
           <p className="text-sm text-red-800 font-medium">
             You don’t have to go through this alone.
           </p>
-
           <p className="text-sm text-red-700 mt-1">
             If things feel overwhelming right now, it might help to talk to
             someone you trust or reach out to a support service.
           </p>
-
-          <div className="mt-3 space-y-1 text-sm">
-            <p>
-              🇮🇳 <strong>India:</strong>{" "}
-              <a
-                href="tel:9820466726"
-                className="underline text-red-700"
-              >
-                AASRA Helpline — 9820466726
-              </a>
-            </p>
-
-            <p>
-              🌍 <strong>Global:</strong>{" "}
-              <a
-                href="https://findahelpline.com"
-                target="_blank"
-                rel="noreferrer"
-                className="underline text-red-700"
-              >
-                findahelpline.com
-              </a>
-            </p>
-          </div>
-
           <p className="text-xs text-red-600 mt-2">
             This support is optional. MindBloom is not a replacement for
             professional help.
