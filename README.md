@@ -106,6 +106,9 @@ Just **early insight and guidance**
 
 ## 🚀 Live Demo
 
+🎬 **YouTube Demo**  
+https://youtu.be/S9k_euZsN_g
+
 🔗 **Vercel Deployment**  
 https://mindbloom-voice.vercel.app/
 
