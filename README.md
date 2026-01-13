@@ -206,7 +206,7 @@ Open:
 http://localhost:3000
 ```
 
-## 🔮 Future Work & Roadmap
+## 🔮 Future Work
 
 MindBloom Voice is intentionally designed as a **lightweight, privacy-first prototype**.  
 With more time and resources, it can be extended in the following high-impact directions:
