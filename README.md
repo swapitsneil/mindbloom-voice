@@ -206,6 +206,60 @@ Open:
 http://localhost:3000
 ```
 
+## 🔮 Future Work & Roadmap
+
+MindBloom Voice is intentionally designed as a **lightweight, privacy-first prototype**.  
+With more time and resources, it can be extended in the following high-impact directions:
+
+### 🎙️ True Voice-Based Sentiment Analysis
+- Current sentiment inference is **language-based** (text extracted from speech)
+- Future versions will analyze **acoustic features** such as:
+  - pitch variation
+  - speech rate
+  - pauses and hesitation patterns
+- This would allow more accurate detection of masked emotions and vocal stress
+- All processing would remain **on-device or privacy-preserving**
+
+### 🧠 Lightweight ML Models for Trend Prediction
+- Introduce simple ML models (e.g. regression or time-series analysis)  
+- Predict **future burnout risk** based on historical mood and voice patterns  
+- Help users take preventive action earlier
+
+### 📈 Long-Term Emotional Insights
+- Monthly and quarterly emotional summaries  
+- Detection of recurring stress cycles (e.g. exam periods, deadlines)
+- Personalised insights rather than generic recommendations
+
+### 🤝 Optional Trusted Sharing
+- Allow users to **export encrypted summaries**
+- Share insights with:
+  - a trusted friend
+  - mentor
+  - therapist (optional, user-controlled)
+- No social feed or public sharing
+
+### 🌍 Multilingual & Cultural Support
+- Support non-English voice input
+- Adapt sentiment signals for cultural and linguistic nuances
+- Improve accessibility for a global audience
+
+### ♿ Accessibility & Mobile Optimization
+- Improved mobile UX for low-energy situations
+- Better screen reader support
+- Offline-first enhancements
+
+### 🛡️ Advanced Safety & Ethics Controls
+- More nuanced crisis escalation logic
+- User-configurable safety preferences
+- Transparent explanation of AI behaviour and limitations
+
+---
+
+MindBloom Voice aims to evolve into a **preventive mental wellbeing tool** —  
+not by replacing professionals, but by helping users recognise early warning signs and act responsibly.
+
+---
+
 ## 🙌 Author
 
 Built by Swapnil Nicolson Dadel
