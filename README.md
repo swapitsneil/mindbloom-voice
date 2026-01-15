@@ -263,3 +263,12 @@ not by replacing professionals, but by helping users recognise early warning sig
 Built by Swapnil Nicolson Dadel
 For students who don’t need therapy -
 they need clarity, calm, and early signals 🌱
+
+## 📬 Contact
+
+If you’d like to connect, collaborate, or discuss opportunities, feel free to reach out:
+
+- 📧 Email: **swapnilnicolson.201@gmail.com**
+- 💼 GitHub: https://github.com/swapitsneil
+
+I’m open to feedback, collaboration, and job opportunities.
