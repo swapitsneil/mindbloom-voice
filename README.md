@@ -90,17 +90,15 @@ Just **early insight and guidance**
 
 ## 🖼️ Screenshots
 
-<img width="2824" height="1514" alt="Image" src="https://github.com/user-attachments/assets/2b770f88-c6eb-434c-a672-15f2451cb8fd" />
+## 📸 Mindbloom Voice – Product Walkthrough
 
-<img width="2756" height="1510" alt="Image" src="https://github.com/user-attachments/assets/a19a53b3-2077-430b-b387-ecb5ce30f343" />
+![Voice Chat](assets/screenshots/voice1.png)
+![Conversation Flow](assets/screenshots/voice2.png)
+![Journal Entry](assets/screenshots/voice3.png)
+![Mood Tracking](assets/screenshots/voice4.png)
+![Insights](assets/screenshots/voice5.png)
+![Voice Chat Sentiment](assets/screenshots/voice6.png)
 
-<img width="2848" height="1516" alt="Image" src="https://github.com/user-attachments/assets/2381037a-3c6d-4c55-9b97-660f3118a273" />
-
-<img width="2818" height="1388" alt="Image" src="https://github.com/user-attachments/assets/641097be-9a15-4e4a-a034-18e32c7cc344" />
-
-<img width="2800" height="1362" alt="Image" src="https://github.com/user-attachments/assets/1be68d42-c06e-4afe-af67-9cb7da85ca14" />
-
-<img width="2848" height="1390" alt="Image" src="https://github.com/user-attachments/assets/e640b5b6-1c14-4a49-948f-b81cd07ae0f6" />
 
 ---
 
