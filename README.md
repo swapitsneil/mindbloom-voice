@@ -264,6 +264,8 @@ Built by Swapnil Nicolson Dadel
 For students who don’t need therapy -
 they need clarity, calm, and early signals 🌱
 
+---
+
 ## 📬 Contact
 
 If you’d like to connect, collaborate, or discuss opportunities, feel free to reach out:
