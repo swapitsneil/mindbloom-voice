@@ -61,7 +61,7 @@ export async function POST(req: Request) {
     sessions.set(sessionId, history);
 
     const completion = await client.chat.completions.create({
-      model: "xiaomi/mimo-v2-flash:free",
+      model: "tngtech/deepseek-r1t2-chimera:free",
       messages: history,
       temperature: 0.7,
     });
