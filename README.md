@@ -122,7 +122,7 @@ https://mindbloom-voice.vercel.app/
 
 ### AI & Backend
 - OpenRouter API  
-- Model: `xiaomi/mimo-v2-flash:free`  
+- Model: `tngtech/deepseek-r1t2-chimera:free`  
 - Server-side Node.js runtime  
 - Safety-filtered AI responses  
 
